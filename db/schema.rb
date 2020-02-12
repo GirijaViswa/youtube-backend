@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2020_02_11_224927) do
   create_table "watch_laters", force: :cascade do |t|
     t.integer "user_id"
     t.string "url"
+    t.boolean "saved"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_watch_laters_on_user_id"
