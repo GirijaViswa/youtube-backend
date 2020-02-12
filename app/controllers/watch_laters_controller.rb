@@ -5,9 +5,12 @@ class WatchLatersController < ApplicationController
     end
   
     def create
-        byebug
-        WatchLater.create(url:params[:url],user_id:params[:user_id])
-  
+        WatchLater.create(strong_params)
     end
+
+    private
+    def strong_params
+        params.require(:watch_later).permit(:user_id, :url)
+      end
  
 end

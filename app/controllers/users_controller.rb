@@ -6,12 +6,10 @@ class UsersController < ApplicationController
   
     def show
         myuser = User.find(params[:id])
-        byebug
-        render json: {id: myuser.id , name: myuser.username, watchLaters: myuser.watchLaters.to_json(), categories: myuser.categories}
+        render json: {id: myuser.id , name: myuser.username,  categories: myuser.categories, watch_laters: myuser.watch_laters}
     end
     
     def create
-        byebug
         myuser = User.create(username:params[:username])
     end
  
