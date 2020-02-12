@@ -6,7 +6,9 @@ class UsersController < ApplicationController
   
     def show
         myuser = User.find(params[:id])
-        render json: {id: myuser.id , name: myuser.username,  categories: myuser.categories, watch_laters: myuser.watch_laters}
+        render json: {id: myuser.id , name: myuser.username,  
+        categories: myuser.categories.as_json(:except => [ :created_at, :updated_at ]), 
+        watch_laters: myuser.watch_laters.as_json(:except => [ :created_at, :updated_at ])}.to_json
     end
     
     def create
