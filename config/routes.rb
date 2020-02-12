@@ -5,6 +5,6 @@ Rails.application.routes.draw do
     resources :watch_laters, only: [:create, :index]
   end
   resources :categories, only: [:index]
-  resources :watch_laters, only: [:index]
+  get '/only_watch_laters' => 'watch_laters#showall'
  
 end
