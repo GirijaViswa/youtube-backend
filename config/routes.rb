@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   end
   resources :categories, only: [:index]
   get '/only_watch_laters' => 'watch_laters#showall'
+  delete '/only_watch_laters/:id' => 'watch_laters#destroy'
  
 end

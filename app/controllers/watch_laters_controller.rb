@@ -17,6 +17,11 @@ class WatchLatersController < ApplicationController
         render json: WatchLater.all
     end
 
+    def destroy
+       record = WatchLater.find(params[:id])
+       record.destroy
+    end
+
     private
     def strong_params
         params.require(:watch_later).permit(:user_id, :url, :saved, :title)
