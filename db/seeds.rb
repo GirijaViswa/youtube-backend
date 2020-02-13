@@ -19,7 +19,7 @@ Category.create(user:User.first,categoryname:"news")
 Category.create(user:User.first,categoryname:"songs")
 Category.create(user:User.first,categoryname:"movies")
 
-categoryname:"sports")
+Category.create(user:User.last,categoryname:"sports")
 Category.create(user:User.last,categoryname:"games")
 Category.create(user:User.last,categoryname:"news")
 Category.create(user:User.last,categoryname:"songs")
