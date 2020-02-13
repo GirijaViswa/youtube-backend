@@ -11,11 +11,18 @@ User.destroy_all
  
 User.create(username: "Bronte")
 User.create(username: "Sewell")
+User.create(username: "Girija")
  
 Category.create(user:User.first,categoryname:"sports")
 Category.create(user:User.first,categoryname:"games")
 Category.create(user:User.first,categoryname:"news")
 Category.create(user:User.first,categoryname:"songs")
 Category.create(user:User.first,categoryname:"movies")
+
+categoryname:"sports")
+Category.create(user:User.last,categoryname:"games")
+Category.create(user:User.last,categoryname:"news")
+Category.create(user:User.last,categoryname:"songs")
+Category.create(user:User.last,categoryname:"movies")
  
 # WatchLater.create(user:User.first,url:"https://www.youtube-nocookie.com/embed/ryJgDL9jzKk")
