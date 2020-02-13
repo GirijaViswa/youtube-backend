@@ -10,7 +10,8 @@ class WatchLatersController < ApplicationController
     end
   
     def create
-        WatchLater.create(strong_params)
+        newele = WatchLater.create(strong_params)
+        render json: newele.to_json()
     end
 
     def showall
