@@ -12,9 +12,12 @@
 
 ActiveRecord::Schema.define(version: 2020_02_11_224927) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "categories", force: :cascade do |t|
     t.string "categoryname"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_categories_on_user_id"
@@ -27,7 +30,7 @@ ActiveRecord::Schema.define(version: 2020_02_11_224927) do
   end
 
   create_table "watch_laters", force: :cascade do |t|
-    t.integer "user_id"
+    t.bigint "user_id"
     t.string "url"
     t.string "title"
     t.boolean "saved"
