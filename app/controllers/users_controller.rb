@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
     def index
         allusers = User.all
-        render json: allusers
+        render json: allusers.to_json
     end
   
     def show
